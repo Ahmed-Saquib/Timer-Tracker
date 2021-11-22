@@ -1,0 +1,3 @@
+<div class="cleanslate w24tz-current-time w24tz-middle" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
+<p><a href="//24timezones.com/Dhaka/time" style="text-decoration: none" class="clock24" id="tz24-1624356701-c173-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIxIiwic2hvd3NlY29uZHMiOiIxIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2MGQxYjc1ZGRjMDU4IiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="Current time in Dhaka" target="_blank" rel="nofollow"></a></p><div id="clock_block_cb60d1b75ddc058"></div></div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
