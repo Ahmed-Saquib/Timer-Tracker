@@ -59,15 +59,17 @@
             <input type="button" class="btn btn-primary btn-block " id="endTime" value="Stop timer" onclick="StopTime()" disabled>
             <button type="button"  onclick = saveRecord()>Save record</button>
 
-            <h1>🡇</h1>
+            <h1>Add Task options 🡇</h1>
+            <input name="Main task" class="form-control" placeholder="Main task name" id= "mainTaskName" type="text">
+            <button type="button"  onclick = saveMainTaskName()>Add</button>
+            <input name="Sub task" class="form-control" placeholder="Sub task name" id= "subTaskName" type="text">
+            <button type="button"  onclick = saveSubTaskName()>Add</button>
+          </div>
+          <div class="col-md-6 content1-right">
             <!-- Quotes !!! -->
             <p>"Time is money." – Benjamin Franklin.</p>
             <p>"Better three hours too soon than a minute too late." – William Shakespeare.</p>
             <p>Replace – Netflix with Sleep, TV with Exercise, Overthinking with Action, Blame with Responsibility.</p>
-            <!-- <div class="content1-left"></div> -->
-          </div>
-          <div class="col-md-6 content1-right">
-            <p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
           </div>
         </div>
       </div>
