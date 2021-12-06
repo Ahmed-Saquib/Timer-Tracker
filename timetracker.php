@@ -11,6 +11,7 @@
   }
   $uniqueID = generate_string($permitted_chars, 4);
   // This unique id will be given to each task and store in database
+  $id = "countup1";
 ?>
 <html>
   <head>
@@ -55,7 +56,7 @@
 
             <input name="uname" class="form-control" placeholder="Task name" id= "uname" type="text"  >
             <input name="uniqueID"   id= "uniqueID"  value ="<?php echo $uniqueID ?>"  type="hidden" disabled>
-            <input type="button" class="btn btn-primary btn-block " id="startTime" value="Start timer" onclick="StartTime()">
+            <input type="button" class="btn btn-primary btn-block " id="startTime" value="Start timer" onclick="StartTime('<?php echo($id); ?>')">
             <input type="button" class="btn btn-primary btn-block " id="endTime" value="Stop timer" onclick="StopTime()" disabled>
             <button type="button"  onclick = saveRecord()>Save record</button>
 
@@ -79,7 +80,7 @@
       
     <script>
 
-      function StartTime() {
+      function StartTime(id) {
         var uname = document.getElementById('uname').value;
         var uniqueID = document.getElementById('uniqueID').value;
         jQuery.ajax({
