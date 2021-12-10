@@ -9,6 +9,9 @@
   $TaskSQL="SELECT taskName FROM task";
   $TaskArray=$objDBClass->RetriveData($TaskSQL,$strErr);
 
+  $TabledataSQL="SELECT taskName,jobType,timeDiff FROM timetable WHERE saveRecord=1";
+  $tableDataArray=$objDBClass->RetriveData($TabledataSQL,$strErr);
+
   $permitted_chars = '0123456789';
   function generate_string($input, $strength = 16) {
     $input_length = strlen($input);
@@ -123,17 +126,27 @@
             </details>
           </div>
           <div class="col-md-6 content1-right">
+          
             <table id="customers">
               <tr>
                 <th>Task/Project Name</th>
                 <th>Type</th>
                 <th>Duration</th>
               </tr>
+              <?php
+                for($i=0;$i<count($tableDataArray);$i++){
+                  $taskName = $tableDataArray[$i][0];
+                  $jobType = $tableDataArray[$i][1];
+                  $timeDiff = $tableDataArray[$i][2]; 
+              ?>  
               <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
+                <td><?php echo($taskName); ?></td>
+                <td><?php echo($jobType); ?></td>
+                <td><?php echo($timeDiff); ?></td>
               </tr>
+              <?php
+                }
+              ?>
             </table>
           </div>
         </div>
