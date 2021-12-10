@@ -1,6 +1,6 @@
 <?php
 
-    $uname = $_GET['uname'];
+    $taskName = $_GET['taskName'];
     $uniqueID = $_GET['uniqueID'];
     $strerr="";
     $message="";
@@ -11,17 +11,17 @@
     if($strErr!=NULL){
         echo $strErr;
     }else{
-        $strSQL = "UPDATE timetable SET endtime = NOW() WHERE  serial='$uniqueID' AND  taskname='$uname'";
-        echo $strSQL;
+        $strSQL = "UPDATE timetable SET endtime = NOW() WHERE  serial='$uniqueID' AND  taskname='$taskName'";
+        //echo $strSQL;
         $objDBClass->ExecuteQuery($strSQL,$strerr);
-        $SQLupdate = "SELECT TIMEDIFF (endtime,starttime)  from timetable WHERE serial = '$uniqueID' AND  taskname='$uname'";
-        echo $SQLupdate;
+        $SQLupdate = "SELECT TIMEDIFF (endtime,starttime)  from timetable WHERE serial = '$uniqueID' AND  taskname='$taskName'";
+        //echo $SQLupdate;
         $Result= $objDBClass->RetriveData($SQLupdate,$strerr);
-        echo $Result[0][0];
+        //echo $Result[0][0];
         $time = $Result[0][0];
-        echo $time;
-        $finalSQL = "UPDATE timetable SET TimeDiff = '$time' WHERE  serial='$uniqueID' AND  taskname='$uname'";
-        echo $finalSQL;
+        //echo $time;
+        $finalSQL = "UPDATE timetable SET TimeDiff = '$time' WHERE  serial='$uniqueID' AND  taskname='$taskName'";
+        //echo $finalSQL;
         $objDBClass->ExecuteQuery($finalSQL,$strerr);
 
     if($strerr!=NULL){
