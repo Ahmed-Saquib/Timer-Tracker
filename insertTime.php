@@ -1,7 +1,8 @@
 <?php
-
-    $uname = $_GET['uname'];
+    $taskName = $_GET['taskName'];
     $uniqueID = $_GET['uniqueID'];
+    $jobType = $_GET['jobType'];
+    $taskDetails = $_GET['taskDetails'];
     echo $uniqueID;
     $strerr="";
     $message="";
@@ -13,17 +14,14 @@
         echo $strErr;
     }else{
         // $strSQL = "UPDATE timetable SET verified=1 WHERE  serial='$uniqueID' AND  taskname='$uname'";
-        $strSQL = "INSERT INTO timetable (taskname,serial,starttime) values ('$uname','$uniqueID',NOW())";
+        $strSQL = "INSERT INTO timetable (taskName,serial,jobType,details,startTime) 
+                    values ('$taskName','$uniqueID','$jobType','$taskDetails',NOW())";
         $objDBClass->ExecuteQuery($strSQL,$strerr);
-
-
-    if($strerr!=NULL){
-        echo $strerr;
-      }else{
-          echo $uname;
-      }
-    $objDBClass->CloseConnection();
+        if($strerr!=NULL){
+            echo $strerr;
+        }else{
+            echo $uname;
+        }
+        $objDBClass->CloseConnection();
     }
-
-
 ?>
