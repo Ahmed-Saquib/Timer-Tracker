@@ -1,8 +1,8 @@
 <?php
 
-    $uname = $_GET['uname'];
+    $taskName = $_GET['taskName'];
     $uniqueID = $_GET['uniqueID'];
-    echo $uniqueID;
+    //echo $uniqueID;
     $strerr="";
     $message="";
     include_once('RepositoryV1.php');
@@ -12,17 +12,13 @@
     if($strErr!=NULL){
         echo $strErr;
     }else{
-        $strSQL = "UPDATE timetable SET verified=1 WHERE  serial='$uniqueID' AND  taskname='$uname'";
+        $strSQL = "UPDATE timetable SET saveRecord=1 WHERE  serial='$uniqueID' AND  taskname='$taskName'";
         $objDBClass->ExecuteQuery($strSQL,$strerr);
-
-
     if($strerr!=NULL){
         echo $strerr;
-      }else{
+        }else{
           echo $uname;
-      }
-    $objDBClass->CloseConnection();
+        }
+        $objDBClass->CloseConnection();
     }
-
-
 ?>
